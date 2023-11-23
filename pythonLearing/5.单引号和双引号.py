@@ -9,3 +9,7 @@ print("let's go")
 print('let"s go')
 print('let\'s go')  # 转义字符
 # 三引号
+print('''123321''')
+print("""789987""")
+
+
