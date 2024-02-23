@@ -1,4 +1,4 @@
-a = 98
+a = input("a等于:")
 if a == 2:
     print("a = 2")
 elif a == 99:
