@@ -10,7 +10,10 @@ def main():
         filename = "text.txt"
         with open(filename, "tr+", encoding="utf8") as f:
             # f.write(input("请直接输入:"))
-            print(f.read())
+            text = f.readlines()
+            l = list(text)
+            print(l)
+
     except Exception as e:
         print("baocuo： {}".format(e))
 
