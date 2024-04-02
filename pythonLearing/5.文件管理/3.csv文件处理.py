@@ -8,18 +8,19 @@
 
 def read_csv(file_name):
     try:
-        with open(file_name, 'rt', encoding='gbk') as f:
+        with open(file_name, 'rt', encoding='utf-8-sig') as f:
             text = f.read()
     except Exception as e:
         print("error".format(e))
 
     lines = text.split("\n")
+
     new_lines = []
 
     for line in lines:
         new_line = line.split(",")
         new_lines.append(new_line)
-
+        new_lines = [line for line in new_lines if line != ['']]  # 去除空行
     return new_lines
 
 # 从csv中读取数据
@@ -27,22 +28,22 @@ def read_csv(file_name):
 data = read_csv("test.csv")
 print(data)
 
-def write_csv(file_name,lines):
-    new_lines = []
-    for l in lines:
-        line = ".".join(l)
-        new_lines.append(line)
-
-    text = "\n".join(new_lines)
-    try:
-        with open(file_name, 'w', encoding='gbk') as f:
-            f.write(text)
-    except Exception as e:
-        print("error".format(e))
-
-data = read_csv("test.csv")
-print(data)
-data.append(["14","十四","forteen"])
-print(data)
-
-write_csv("test.csv", data)
+# def write_csv(file_name,lines):
+#     new_lines = []
+#     for l in lines:
+#         line = ".".join(l)
+#         new_lines.append(line)
+#
+#     text = "\n".join(new_lines)
+#     try:
+#         with open(file_name, 'w', encoding='gbk') as f:
+#             f.write(text)
+#     except Exception as e:
+#         print("error".format(e))
+#
+# data = read_csv("test.csv")
+# print(data)
+# data.append(["14","十四","forteen"])
+# print(data)
+#
+# write_csv("test.csv", data)
